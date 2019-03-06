@@ -144,7 +144,7 @@
 	};
 
 	var clickMenu = function() {
-
+		// debugger;
 		$('#navbar a:not([class="external"])').click(function(event){
 			var section = $(this).data('nav-section'),
 				navbar = $('#navbar');
@@ -167,7 +167,26 @@
 
 
 	};
+	// main content click detection
+		window.onscroll = function (e) {  
+			var navbar = $('#navbar');
 
+		    if ( navbar.is(':visible')) {
+		    	navbar.removeClass('in');
+		    	navbar.attr('aria-expanded', 'false');
+		    	$('.js-colorlib-nav-toggle').removeClass('active');
+		    }
+		}
+		$('#colorlib-main').click(function(event){
+			debugger;
+				var navbar = $('#navbar');
+
+		    if ( navbar.is(':visible')) {
+		    	navbar.removeClass('in');
+		    	navbar.attr('aria-expanded', 'false');
+		    	$('.js-colorlib-nav-toggle').removeClass('active');
+		    }
+		});
 	// Reflect scrolling in navigation
 	var navActive = function(section) {
 
